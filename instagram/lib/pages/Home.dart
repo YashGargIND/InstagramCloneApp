@@ -72,50 +72,7 @@ class _HomeState extends State<Home> {
           //   thickness: 1,
           //   color: Colors.grey[300],
           //),
-          Column(
-            children: [
-              ListTile(
-                shape: OutlineInputBorder(borderSide: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300)),
-                contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                tileColor: Colors.white,
-                title: Text("steverogers1919"),
-                trailing: Icon(Icons.more_horiz),
-              ),
-              Image(image: NetworkImage('https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/42/1539604028-captain-america-civil-war-avengers.jpg'),),
-              ListTile(
-                shape: OutlineInputBorder(borderSide: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300)),
-                contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                tileColor: Colors.white,
-                leading: Row(
-                 mainAxisAlignment: MainAxisAlignment.start,
-                 crossAxisAlignment: CrossAxisAlignment.center,
-                 children: [
-                 SizedBox(height: 50,),
-                 Container(
-                  width: 25,
-                  child: Image(
-                    image: AssetImage('assets/like.png',),),
-                          ),
-                 SizedBox(width: 25,),
-                 Container(
-                  width: 25,
-                  child: Image(
-                    image: AssetImage('assets/like.png',),),
-                  ),
-                 SizedBox(width: 25,),
-                 Container(
-                  width: 25,
-                  child: Image(
-                    image: AssetImage('assets/dm.png',),),),
-                ],
-                ),
-              )
-            ],
-          ),
+          Post(),
           // Divider(
           //   thickness: 1,
           //   color: Colors.grey[300],)
@@ -124,6 +81,81 @@ class _HomeState extends State<Home> {
     ),
       
     );
+  }
+
+  Column Post() {
+    return Column(
+          children: [
+            ListTile(
+              shape: OutlineInputBorder(borderSide: BorderSide(
+                width: 1,
+                color: Colors.grey.shade300)),
+              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              tileColor: Colors.white,
+              title: Text("steverogers1919"),
+              trailing: Icon(Icons.more_horiz),
+            ),
+            Image(image: NetworkImage('https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/42/1539604028-captain-america-civil-war-avengers.jpg'),),
+            Container(
+              color: Colors.white,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                  SizedBox(height: 50, width: 10,),
+                  Container(
+                    width: 27,
+                    child: Image(
+                      image: AssetImage('assets/like.png',),),
+                            ),
+                  SizedBox(width: 25,),
+                  Container(
+                    width: 25,
+                    child: Image(
+                      image: AssetImage('assets/comment.png',),),
+                    ),
+                  SizedBox(width: 25,),
+                  Container(
+                    width: 25,
+                    child: Image(
+                      image: AssetImage('assets/dm.png',),),),
+                  SizedBox(width: 210,),
+                  Container(
+                    width: 25,
+                    child: Image(
+                      image: AssetImage('assets/flag.png',),),),
+                ],),
+            ),
+            Container(
+              color: Colors.white,
+              child: Container(
+                color: Colors.white,
+                width: 400 ,
+                child: Wrap(
+                  runAlignment: WrapAlignment.start,
+                  crossAxisAlignment : WrapCrossAlignment.center , 
+                  
+                  children: [
+                  SizedBox(height: 50, width: 10,),
+                  Container(
+                    child: Text('steverogers1919',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),),),
+                    Text(' Me with my best friend',
+                    softWrap: true,
+                    overflow: TextOverflow.fade,
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 18,
+                    ),
+                  )
+                ]),
+              ))
+          ],
+        );
   }
 
   Container StoryBubble(String address, String username) {
