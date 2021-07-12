@@ -16,13 +16,12 @@ class _SignupState extends State<Signup> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   child : Image(image: NetworkImage('https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo.png') ,),
@@ -46,7 +45,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 10,),
                 Container(
                   width: 343,
                   height: 44,
@@ -64,7 +63,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 10,),
                 Container(
                   width: 343,
                   height: 44,
@@ -82,7 +81,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 10,),
                 Container(
                   width: 343,
                   height: 44,
@@ -100,23 +99,12 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
-                SizedBox(height: 19,),
-                Container(
-                  width: 340,
-                  child: Text(
-                    "Forgot Password?",
-                    textAlign: TextAlign.end,
-                     style: TextStyle(
-                       color: Colors.blue.shade600,
-                       fontSize: 14, ),     
-                       ),
-                ),
-                SizedBox(height:30),
+                SizedBox(height:10),
                 Container(
                   width: 343,
                   height: 44,
                   child: TextButton(
-                    child: Text("Log in"),
+                    child: Text("Sign Up"),
                     onPressed: (){},
                     autofocus: false,
                     style: TextButton.styleFrom(
@@ -132,7 +120,7 @@ class _SignupState extends State<Signup> {
                       ),
                   ),
                 ),
-                SizedBox(height : 96),
+                SizedBox(height : 82),
                 Row(
                 children: <Widget>[
                     Expanded(
@@ -175,7 +163,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ],
                 ),
-                SizedBox(height: 75,),
+                SizedBox(height: 40),
                 Divider(
                    thickness: 1,
                 ),
@@ -183,7 +171,7 @@ class _SignupState extends State<Signup> {
                   padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
                   child: Container(
                     width: 375,
-                    height: 47,
+                    height: 30,
                     child: Text(
                           "Instagram or Facebook",
                           textAlign: TextAlign.center,
