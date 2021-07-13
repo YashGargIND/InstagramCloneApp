@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class User{
   String dplink ;
   String username;
@@ -21,6 +23,21 @@ class PostData{
   }
 }
 
+class MessageData{
+  late String dplink;
+  late String username;
+  late bool storyseen;
+  String lastMessage;
+  String time;
+
+  MessageData(User user, this.lastMessage, this.time){
+    this.dplink = user.dplink;
+    this.username = user.username;
+    this.storyseen = user.storySeen;
+  }
+}
+
+
   List<User> userdata = [
     User(true, '  Your Story  ','https://instagram.fbho2-1.fna.fbcdn.net/v/t51.2885-19/s150x150/160845417_2779067622346563_5904737522503301125_n.jpg?_nc_ht=instagram.fbho2-1.fna.fbcdn.net&_nc_ohc=hhXIov1Fd7sAX-G2BXv&edm=ABfd0MgBAAAA&ccb=7-4&oh=33875506292a3968dc8cdfe4781d4d89&oe=60F299AE&_nc_sid=7bff83'),
     User(false, 'Fury','https://tvline.com/wp-content/uploads/2020/09/samuel-l-jackson-nick-fury.jpg?w=620'),
@@ -36,3 +53,10 @@ class PostData{
     PostData(userdata[6], 'http://images.8tracks.com/cover/i/012/211/726/akjnk-6473.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max&w=960&h=960', ' Pic Credit: Ned', '45')
   ] ;
 
+  List<MessageData> messages = [
+    MessageData(userdata[6], 'Are you Spiderman?', '10m'),
+    MessageData(userdata[5], 'Thanks for motivating me sir, Thank you so much, Thank you very very much','1h   '),
+    MessageData(userdata[1],'Sir, I think i saw an alien', '2h   '),
+    MessageData(userdata[4], 'Can u Teach me Magic?', '10h')
+    
+  ];

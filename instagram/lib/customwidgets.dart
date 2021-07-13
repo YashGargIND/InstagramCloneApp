@@ -214,3 +214,63 @@ class _PosttState extends State<Postt> {
                     ),
             );}
         }
+
+
+
+class DmBox extends StatelessWidget {
+
+  final MessageData messageData;
+
+  const DmBox({required this.messageData}) ;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 72,
+      child: ListTile(
+        dense: false,
+        visualDensity: VisualDensity(vertical: 0),
+       shape: OutlineInputBorder(borderSide: BorderSide(
+         width: 1,
+         color: Colors.white)),
+       contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 8),
+       tileColor: Colors.white,
+       leading: DpBubble(User(messageData.storyseen, messageData.username, messageData.dplink), 29),
+       title: Text(messageData.username,
+                   style: TextStyle(fontSize: 16,
+                   fontWeight: FontWeight.normal,
+                   color: Colors.black87),),
+        subtitle: Container(
+          height: 19,
+          child: Text(messageData.lastMessage,
+                     style: TextStyle(fontSize: 16,
+                     fontWeight: FontWeight.normal,
+                     color: Colors.grey[500]),),
+        ),
+       
+       trailing: Container(
+         width: 80,
+         child: Row(
+           crossAxisAlignment: CrossAxisAlignment.center,
+           children: [
+             Column(
+               children: [
+                 SizedBox(height: 33, width: 1),
+                 Text(messageData.time,
+                 style: TextStyle(fontSize: 15,
+                         fontWeight: FontWeight.normal,
+                         letterSpacing: 0,
+                         color: Colors.grey[500]),),
+               ],
+             ),
+             SizedBox(width: 10,),
+             Icon(Icons.camera_alt_outlined,
+             size: 30,),
+             SizedBox(width: 5,),
+           ],
+         ),
+       ),
+                ),
+    );
+  }
+}
