@@ -10,6 +10,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  int _currentindex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,29 +79,31 @@ class _HomeState extends State<Home> {
     bottomNavigationBar: BottomNavigationBar(
       selectedItemColor: Colors.black87,
       unselectedItemColor: Colors.black,
-      selectedIconTheme: IconThemeData(
-        opacity: 1
-      ),
-      unselectedIconTheme: IconThemeData(opacity: 0.6),
+      currentIndex: _currentindex,
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       selectedFontSize: 0,
       iconSize: 30,
+      onTap: (index){
+        setState(() {
+          _currentindex = index;
+        });
+      },
       items: [
         BottomNavigationBarItem(
-          icon:  Icon(Icons.home,),
+          icon:  Icon((_currentindex==0) ? Icons.home: Icons.home_outlined,),
           label: 'home',),
         BottomNavigationBarItem(
-          icon:  Icon(Icons.search,),
+          icon:  Icon(Icons.search_outlined, size: (_currentindex==1) ? 33 : 30 ),
           label: 'search'),
         BottomNavigationBarItem(
-          icon:  Icon(Icons.add_box_outlined ,),
+          icon:  Icon((_currentindex==2) ? Icons.add_box :Icons.add_box_outlined ,),
           label: 'add'),
         BottomNavigationBarItem(
-          icon:  Icon(Icons.favorite_border_outlined,),
+          icon:  Icon((_currentindex==3) ? Icons.favorite : Icons.favorite_border_outlined,),
           label: 'home'),
         BottomNavigationBarItem(
-          icon:  DpBubble(userdata[0], 15),
+          icon: (_currentindex==4) ? DpBubble(userdata[0], 18) : DpBubble(userdata[0], 15),
           label: 'home')
 
       ],)
