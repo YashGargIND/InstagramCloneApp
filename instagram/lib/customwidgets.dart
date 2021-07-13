@@ -2,7 +2,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/users.dart';
 
- Container Post(PostData post) {
+
+
+
+bool liked = false;
+class Postt extends StatefulWidget {
+
+  final PostData post;
+
+
+  const Postt({required this.post }) ;
+
+  
+
+  @override
+  _PosttState createState() => _PosttState();
+}
+
+class _PosttState extends State<Postt> {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       child: Column(
             children: [
@@ -13,12 +32,12 @@ import 'package:instagram/users.dart';
                   color: Colors.grey.shade300)),
                 contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 9),
                 tileColor: Colors.white,
-                leading: DpBubble(User(post.storyseen, post.username, post.dplink), 18),
-                title: Text(post.username),
+                leading: DpBubble(User(widget.post.storyseen, widget.post.username, widget.post.dplink), 18),
+                title: Text(widget.post.username),
                 trailing: Icon(Icons.more_horiz),
               ),
 //---------------------------------image---------------------------------------------
-              Container(child: Image(image: NetworkImage(post.postlink),)),
+              Container(child: Image(image: NetworkImage(widget.post.postlink),)),
 //---------------------------------Like bar-------------------------------------------            
               Container(
                 color: Colors.white,
@@ -30,8 +49,26 @@ import 'package:instagram/users.dart';
                     SizedBox(height: 50, width: 10,),
                     Container(
                       width: 27,
-                      child: Icon(Icons.favorite_border_rounded,
-                      size: 32,)
+                      child: IconButton(
+                        icon: Icon( 
+                          liked ? Icons.favorite : (Icons.favorite_border_rounded), 
+                          size: 32, 
+                          color: liked ? Colors.red : Colors.black87),
+                      onPressed: () {
+                        setState(() {
+                        liked = !liked;});
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              liked ? 'Thanks for liking':'You have disliked',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 16),),
+                            backgroundColor: Colors.white,
+                            duration: Duration(milliseconds: 400),
+                            ));
+                      },
+                      padding: EdgeInsets.all(0),)
                               ),
                     SizedBox(width: 25,),
                     Container(
@@ -69,11 +106,11 @@ import 'package:instagram/users.dart';
                         textAlign: TextAlign.start,
                         text: TextSpan(
                           children: [
-                            TextSpan(text: post.username,
+                            TextSpan(text: widget.post.username,
                             style: TextStyle(fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.black87),),
-                            TextSpan(text: post.caption,
+                            TextSpan(text: widget.post.caption,
                             style: TextStyle(fontSize: 18,
                             fontWeight: FontWeight.normal,
                             color: Colors.black87),),
@@ -81,7 +118,7 @@ import 'package:instagram/users.dart';
                             style: TextStyle(fontSize: 18,
                             fontWeight: FontWeight.normal,
                             color: Colors.black87),),
-                               TextSpan(text: 'View all ${post.comments} comments',
+                               TextSpan(text: 'View all ${widget.post.comments} comments',
                             style: TextStyle(fontSize: 18,
                             fontWeight: FontWeight.normal,
                             color: Colors.black45),),
@@ -99,6 +136,7 @@ import 'package:instagram/users.dart';
           ),
     );
   }
+}
 
   
 

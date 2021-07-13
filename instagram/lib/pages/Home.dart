@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
             // Post(post[1]),
             Column(
                   children: post.map((postdata) {
-                    return Post(postdata);
+                    return Postt(post: postdata);
                   }).toList(),),
           ],
         ),
@@ -76,7 +76,11 @@ class _HomeState extends State<Home> {
     ),
     bottomNavigationBar: BottomNavigationBar(
       selectedItemColor: Colors.black87,
-      unselectedItemColor: Colors.grey,
+      unselectedItemColor: Colors.black,
+      selectedIconTheme: IconThemeData(
+        opacity: 1
+      ),
+      unselectedIconTheme: IconThemeData(opacity: 0.6),
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       selectedFontSize: 0,
