@@ -61,27 +61,39 @@ import 'package:instagram/users.dart';
                 child: Container(
                   color: Colors.white,
                   width: 400 ,
-                  child: Wrap(
-                    runAlignment: WrapAlignment.start,
-                    crossAxisAlignment : WrapCrossAlignment.center , 
-                    
-                    children: [
-                    SizedBox(height: 50, width: 10,),
-                    Container(
-                      child: Text(post.username,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),),),
-                      Text(post.caption,
-                      softWrap: true,
-                      overflow: TextOverflow.fade,
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(12, 4, 12, 6),
+                    child: Container(
+                      color: Colors.white,
+                      child: RichText(
+                        textAlign: TextAlign.start,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(text: post.username,
+                            style: TextStyle(fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87),),
+                            TextSpan(text: post.caption,
+                            style: TextStyle(fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black87),),
+                               TextSpan(text: '\n\n',
+                            style: TextStyle(fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black87),),
+                               TextSpan(text: 'View all ${post.comments} comments',
+                            style: TextStyle(fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black45),),
+                                TextSpan(text: '\n',
+                            style: TextStyle(fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black87),),
+
+                          ] ),
                       ),
-                    )
-                  ]),
+                    ),
+                  )
                 ))
             ],
           ),
