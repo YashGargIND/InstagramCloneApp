@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/users.dart';
+import 'package:instagram/customwidgets.dart';
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
 
@@ -9,19 +10,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List<User> storydp = [
-    User('  Your Story  ','https://instagram.fbho2-1.fna.fbcdn.net/v/t51.2885-19/s150x150/160845417_2779067622346563_5904737522503301125_n.jpg?_nc_ht=instagram.fbho2-1.fna.fbcdn.net&_nc_ohc=hhXIov1Fd7sAX-G2BXv&edm=ABfd0MgBAAAA&ccb=7-4&oh=33875506292a3968dc8cdfe4781d4d89&oe=60F299AE&_nc_sid=7bff83'),
-    User('Fury','https://tvline.com/wp-content/uploads/2020/09/samuel-l-jackson-nick-fury.jpg?w=620'),
-    User('TheTonyStark','https://img.cinemablend.com/filter:scale/quill/d/9/5/a/c/9/d95ac9d6f0acd56e12b9452301c763cd1aeffe51.jpg?mw=600'),
-    User('Nat_romanoff','https://i.pinimg.com/originals/70/db/8e/70db8e8ab2bbaf0d494235be2dd5d312.jpg'),
-    User('DRStrange','http://www.cheatsheet.com/wp-content/uploads/2016/04/doctor-strange-pic-full.jpg'),
-    User('parker_peter13','https://data.whicdn.com/images/288897509/original.gif')
-  ] ;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[50],
+//---------------------------------APPBAR------------------------------------------------
       appBar: AppBar(
         backgroundColor: Colors.grey[100],
         elevation: 0,
@@ -53,144 +46,61 @@ class _HomeState extends State<Home> {
       
         ],
       ),
-    body: Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-          margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
-          height: 98.0,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: storydp.map((userdata) {
-                return StoryBubble(userdata.dplink,userdata.username);
-              }).toList(),
+//---------------------------------------STORY BAR--------------------------------------------
+    body: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+            margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
+            height: 105.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: userdata.map((userdata) {
+                  return StoryBubble(userdata);
+                }).toList(),
+              ),
             ),
-          ),
-          // Divider(
-          //   thickness: 1,
-          //   color: Colors.grey[300],
-          //),
-          Post(),
-          // Divider(
-          //   thickness: 1,
-          //   color: Colors.grey[300],)
-        ],
+    //-----------------------------------POSTS--------------------------------------------
+            // Post(post[0]),
+            // Post(post[1]),
+            Column(
+                  children: post.map((postdata) {
+                    return Post(postdata);
+                  }).toList(),),
+          ],
+        ),
       ),
     ),
+    bottomNavigationBar: BottomNavigationBar(
+      selectedItemColor: Colors.black87,
+      unselectedItemColor: Colors.grey,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.white,
+      selectedFontSize: 0,
+      iconSize: 30,
+      items: [
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.home,),
+          label: 'home',),
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.search,),
+          label: 'search'),
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.add_box_outlined ,),
+          label: 'add'),
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.favorite_border_outlined,),
+          label: 'home'),
+        BottomNavigationBarItem(
+          icon:  DpBubble(userdata[0], 15),
+          label: 'home')
+
+      ],)
       
     );
   }
 
-  Column Post() {
-    return Column(
-          children: [
-            ListTile(
-              shape: OutlineInputBorder(borderSide: BorderSide(
-                width: 1,
-                color: Colors.grey.shade300)),
-              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-              tileColor: Colors.white,
-              title: Text("steverogers1919"),
-              trailing: Icon(Icons.more_horiz),
-            ),
-            Image(image: NetworkImage('https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/42/1539604028-captain-america-civil-war-avengers.jpg'),),
-            Container(
-              color: Colors.white,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-
-                  SizedBox(height: 50, width: 10,),
-                  Container(
-                    width: 27,
-                    child: Image(
-                      image: AssetImage('assets/like.png',),),
-                            ),
-                  SizedBox(width: 25,),
-                  Container(
-                    width: 25,
-                    child: Image(
-                      image: AssetImage('assets/comment.png',),),
-                    ),
-                  SizedBox(width: 25,),
-                  Container(
-                    width: 25,
-                    child: Image(
-                      image: AssetImage('assets/dm.png',),),),
-                  SizedBox(width: 210,),
-                  Container(
-                    width: 25,
-                    child: Image(
-                      image: AssetImage('assets/flag.png',),),),
-                ],),
-            ),
-            Container(
-              color: Colors.white,
-              child: Container(
-                color: Colors.white,
-                width: 400 ,
-                child: Wrap(
-                  runAlignment: WrapAlignment.start,
-                  crossAxisAlignment : WrapCrossAlignment.center , 
-                  
-                  children: [
-                  SizedBox(height: 50, width: 10,),
-                  Container(
-                    child: Text('steverogers1919',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),),),
-                    Text(' Me with my best friend',
-                    softWrap: true,
-                    overflow: TextOverflow.fade,
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 18,
-                    ),
-                  )
-                ]),
-              ))
-          ],
-        );
-  }
-
-  Container StoryBubble(String address, String username) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Container(
-                  width: 70,
-                      child: CircleAvatar(
-                        backgroundImage: NetworkImage('$address'),
-                        backgroundColor: Colors.grey[200],
-                        radius: 34,),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.red,
-                          width: 3),)
-                      ),
-                SizedBox(height: 3,),
-                Text('$username',
-
-                style: TextStyle(
-                  fontSize: 15,
-                ),)
-              ],
-            ),
-                  
-
-          ],
-        ),
-      ),
-    );
-  }
 }
