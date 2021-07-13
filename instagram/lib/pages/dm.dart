@@ -82,9 +82,45 @@ class _DMState extends State<DM> {
                   }).toList(),),
           ],
         ),
-      )
       
-    );
+      
+    ),
+    bottomNavigationBar: BottomNavigationBar(
+      selectedItemColor: Colors.black87,
+      unselectedItemColor: Colors.black,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.grey.shade50,
+      currentIndex: 1,
+      unselectedIconTheme: IconThemeData(opacity: 0),
+      selectedIconTheme: IconThemeData(opacity: 1),
+      selectedFontSize: 0,
+      iconSize: 30,
+      items: [
+       
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.search_outlined),
+          label: 'search'),
+        BottomNavigationBarItem(
+          icon:  Container(
+            child: Row(
+              children: [
+                SizedBox(width: 10,),
+                Icon(Icons.camera_alt,
+                  color: Colors.blue ),
+                Text('  Camera',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 18),
+                  )
+              ],
+            ),
+          ),
+          label: ''),
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.favorite),
+          label: 'home'),
+        
+      ],));
   }
 }
 
