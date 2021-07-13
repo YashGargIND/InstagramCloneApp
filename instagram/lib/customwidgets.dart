@@ -64,7 +64,7 @@ class _PosttState extends State<Postt> {
                               style: TextStyle(
                                 color: Colors.black87,
                                 fontSize: 16),),
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.grey[100],
                             duration: Duration(milliseconds: 400),
                             ));
                       },
