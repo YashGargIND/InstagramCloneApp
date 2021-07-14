@@ -258,11 +258,14 @@ class DmBox extends StatelessWidget {
              Column(
                children: [
                  SizedBox(height: 33, width: 1),
-                 Text(messageData.time,
-                 style: TextStyle(fontSize: 15,
-                         fontWeight: FontWeight.normal,
-                         letterSpacing: 0,
-                         color: Colors.grey[500]),),
+                 Container(
+                   width: 35,
+                   child: Text(messageData.time,
+                   style: TextStyle(fontSize: 15,
+                           fontWeight: FontWeight.normal,
+                           letterSpacing: 0,
+                           color: Colors.grey[500]),),
+                 ),
                ],
              ),
              SizedBox(width: 10,),

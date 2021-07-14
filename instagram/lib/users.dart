@@ -47,21 +47,33 @@ class MessageData{
     User(false, 'Fury','https://tvline.com/wp-content/uploads/2020/09/samuel-l-jackson-nick-fury.jpg?w=620'),
     User(false, 'TheTonyStark','https://img.cinemablend.com/filter:scale/quill/d/9/5/a/c/9/d95ac9d6f0acd56e12b9452301c763cd1aeffe51.jpg?mw=600'),
     User(false, 'Nat_romanoff','https://i.pinimg.com/originals/70/db/8e/70db8e8ab2bbaf0d494235be2dd5d312.jpg'),
-    User(true, 'DRStrange','http://www.cheatsheet.com/wp-content/uploads/2016/04/doctor-strange-pic-full.jpg'),
+    User(false, 'DRStrange','http://www.cheatsheet.com/wp-content/uploads/2016/04/doctor-strange-pic-full.jpg'),
     User(true, 'steverogers1919', 'https://i.pinimg.com/originals/ab/b4/c2/abb4c2ef714aedbb945b2744f23abe85.jpg'),
-    User(true, 'parker_peter13','https://data.whicdn.com/images/288897509/original.gif')
+    User(true, 'parker_peter13','https://data.whicdn.com/images/288897509/original.gif'),
+    User(true, 'Samfalcon', 'https://i.pinimg.com/originals/11/23/ee/1123ee3d24fbd445581076cc047472fd.jpg'),
+    User(true, 'WandaMx', 'https://i.scdn.co/image/ab67706c0000bebb080cb97e74231df9cd784bfe'),
+    User(true, 'vision', 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters_opt/p-marvel-the-avengers-paul-bettany.jpg'),
+    User(true, 'M_hill', 'https://i.pinimg.com/originals/bd/23/33/bd23331b493f5e17b48bd0d570ee5a21.png')
   ] ;
 
   List<PostData> post = [
     PostData(userdata[5], 'https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/42/1539604028-captain-america-civil-war-avengers.jpg', ' Me with my best friend', '45,086'),
-    PostData(userdata[6], 'http://images.8tracks.com/cover/i/012/211/726/akjnk-6473.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max&w=960&h=960', ' Pic Credit: Ned', '45')
+    PostData(userdata[6], 'http://images.8tracks.com/cover/i/012/211/726/akjnk-6473.jpg?rect=0,0,500,500&q=98&fm=jpg&fit=max&w=960&h=960', ' Pic Credit: Ned', '45'),
+    PostData(userdata[8], 'https://p4.wallpaperbetter.com/wallpaper/668/774/425/fiction-comic-scarlet-witch-elizabeth-olsen-wallpaper-preview.jpg', ' So, Strongest Avenger?', '86,595' ),
+    PostData(userdata[7], 'http://images6.fanpop.com/image/photos/42900000/Sam-Wilson-Falcon-Captain-America-The-Winter-Soldier-2014-captain-america-the-winter-soldier-42925716-540-300.gif', ' Wings Up', '20,996')
   ] ;
 
   List<MessageData> messages = [
-    MessageData(userdata[6], 'Are you Spiderman?', '10m'),
-    MessageData(userdata[5], 'Thanks for motivating me sir, Thank you so much, Thank you very very much','1h   '),
-    MessageData(userdata[1],'Sir, I think i saw an alien', '2h   '),
-    MessageData(userdata[4], 'Can u Teach me Magic?', '10h')
+    MessageData(userdata[6], 'I think u r Spiderman?', '10m'),
+    MessageData(userdata[5], 'Thanks for motivating me sir, Thank you so much, Thank you very very much','1h'),
+    MessageData(userdata[1],'Sir, I think i saw an alien', '2h'),
+    MessageData(userdata[7], 'I Swear i nvr touched ur wings', '2h'),
+    MessageData(userdata[4], 'Can u Teach me Magic?', '10h'),
+    MessageData(userdata[8], 'Absolutely true!!', '2d'),
+    MessageData(userdata[9],'how tf u reply instantaniously everytime', '1w'),
+    MessageData(userdata[2], 'sir pls reply sir', '13w'),
+    MessageData(userdata[10], 'Thnx for recuiting me to SHIELD', '13w'),
+    
     
   ];
 
