@@ -10,7 +10,16 @@ import 'package:instagram/pages/search.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Search()
+    home: Login(),
+    routes: {
+      '/Login' : (_) => Login(),
+      '/LoginPage' : (_) => Loginpage(),
+      '/Signup' : (_) => Signup(),
+      '/Home' : (_) => Home(),
+      '/DM' : (_) => DM(),
+      '/Search' : (_) => Search(),
+      '/Profile' : (_) => Profile(),
+    },
   ));
 }
 

@@ -15,6 +15,13 @@ class _SignupState extends State<Signup> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: InkWell(
+          onTap: (){
+            Navigator.of(context).pushNamed('/Login');
+          },
+          child: Icon(Icons.arrow_back_ios,
+          color: Colors.black,
+                  size: 30),),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -105,7 +112,9 @@ class _SignupState extends State<Signup> {
                   height: 44,
                   child: TextButton(
                     child: Text("Sign Up"),
-                    onPressed: (){},
+                    onPressed: (){
+                    Navigator.of(context).pushNamed('/Home');
+                    },
                     autofocus: false,
                     style: TextButton.styleFrom(
                       textStyle: TextStyle(

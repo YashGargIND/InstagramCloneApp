@@ -37,7 +37,9 @@ class _PosttState extends State<Postt> {
                 trailing: Icon(Icons.more_horiz),
               ),
 //---------------------------------image---------------------------------------------
-              Container(child: Image(image: NetworkImage(widget.post.postlink),)),
+              Container(
+              
+                child: Image(image: NetworkImage(widget.post.postlink),)),
 //---------------------------------Like bar-------------------------------------------            
               Container(
                 color: Colors.white,

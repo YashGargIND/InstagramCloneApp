@@ -40,11 +40,16 @@ class _HomeState extends State<Home> {
                   width: 30,
                   ),
           SizedBox(width: 25),
-           Container(
-                  child : Image(
-                  image: AssetImage('assets/dm.png') ,),
-                  width: 30,
-                  ),
+           InkWell(
+             onTap: (){
+               Navigator.of(context).pushNamed('/DM');
+             },
+             child: Container(
+                    child : Image(
+                    image: AssetImage('assets/dm.png') ,),
+                    width: 30,
+                    ),
+           ),
       
         ],
       ),
@@ -88,6 +93,15 @@ class _HomeState extends State<Home> {
         setState(() {
           _currentindex = index;
         });
+        if(index==0){
+          Navigator.of(context).pushNamed('/Home');
+        }
+        if(index==1){
+          Navigator.of(context).pushNamed('/Search');
+        }
+        if(index==4){
+          Navigator.of(context).pushNamed('/Profile');
+        }
       },
       items: [
         BottomNavigationBarItem(

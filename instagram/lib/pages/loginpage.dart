@@ -13,6 +13,13 @@ class _LoginpageState extends State<Loginpage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: InkWell(
+          onTap: (){
+            Navigator.of(context).pushNamed('/Login');
+          },
+          child: Icon(Icons.arrow_back_ios,
+          color: Colors.black,
+                  size: 32),),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -81,7 +88,9 @@ class _LoginpageState extends State<Loginpage> {
                   height: 44,
                   child: TextButton(
                     child: Text("Log in"),
-                    onPressed: (){},
+                    onPressed: (){
+                    Navigator.of(context).pushNamed('/Home');
+                    },
                     autofocus: false,
                     style: TextButton.styleFrom(
                       textStyle: TextStyle(

@@ -30,7 +30,9 @@ class _LoginState extends State<Login> {
                 height: 44,
                 child: TextButton(
                   child: Text("Log in"),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).pushNamed('/LoginPage');
+                  },
                   autofocus: false,
                   style: TextButton.styleFrom(
                     textStyle: TextStyle(
@@ -50,8 +52,10 @@ class _LoginState extends State<Login> {
                 width: 307,
                 height: 44,
                 child: TextButton(
-                  child: Text("Sign in"),
-                  onPressed: (){},
+                  child: Text("Sign up"),
+                  onPressed: (){
+                    Navigator.of(context).pushNamed('/Signup');
+                  },
                   autofocus: false,
                   style: TextButton.styleFrom(
                     textStyle: TextStyle(

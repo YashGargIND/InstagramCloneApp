@@ -15,6 +15,14 @@ class _DMState extends State<DM> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.grey.shade50,
+        leading: InkWell(
+          onTap: (){
+            Navigator.of(context).pushNamed('/Home');
+          },
+          child: Icon(Icons.arrow_back_ios,
+          color: Colors.black,
+                  size: 25),
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -59,13 +67,13 @@ class _DMState extends State<DM> {
                     // color: Colors.grey.shade300,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey.shade200,
+                      color: Colors.grey.shade50,
                        ),
                     child: TextField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(borderSide: BorderSide(
-                              width: 11,
-                              color: Colors.grey.shade400,),
+                              width: 0,
+                              color: Colors.white,),
                               borderRadius: BorderRadius.circular(12)),
                         prefixIcon: Icon(Icons.search),
                         labelText: "Search",

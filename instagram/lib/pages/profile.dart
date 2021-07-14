@@ -286,6 +286,15 @@ class _ProfileState extends State<Profile> {
         setState(() {
           _currentindex = index;
         });
+        if(index==0){
+          Navigator.of(context).pushNamed('/Home');
+        }
+        if(index==1){
+          Navigator.of(context).pushNamed('/Search');
+        }
+        if(index==4){
+          Navigator.of(context).pushNamed('/Profile');
+        }
       },
       items: [
         BottomNavigationBarItem(
