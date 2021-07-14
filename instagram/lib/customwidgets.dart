@@ -37,9 +37,25 @@ class _PosttState extends State<Postt> {
                 trailing: Icon(Icons.more_horiz),
               ),
 //---------------------------------image---------------------------------------------
-              Container(
-              
-                child: Image(image: NetworkImage(widget.post.postlink),)),
+              InkWell(
+                onDoubleTap: (){
+                  setState(() {
+                        liked = !liked;});
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              liked ? 'Thanks for liking':'You have disliked',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 16),),
+                            backgroundColor: Colors.grey[100],
+                            duration: Duration(milliseconds: 400),
+                            ));
+                },
+                child: Container(
+                
+                  child: Image(image: NetworkImage(widget.post.postlink),)),
+              ),
 //---------------------------------Like bar-------------------------------------------            
               Container(
                 color: Colors.white,
