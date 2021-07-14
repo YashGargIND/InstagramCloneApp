@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                child : Image(image: NetworkImage('https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo.png') ,),
+                child : Image(image: AssetImage('assets/Instagram-Logo.png') ,),
                 width: 182,
                 ),
               SizedBox(height: 125,),
