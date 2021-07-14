@@ -63,7 +63,7 @@ class _ProfileState extends State<Profile> {
                   style: TextStyle(fontSize: 19),
                   children: [
                   TextSpan(
-                    text: '0',
+                    text: '9',
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold
@@ -258,8 +258,21 @@ class _ProfileState extends State<Profile> {
          ),
          SizedBox(height: 10,),
          Container(child: 
-         Divider(height: 1,),)
-      ],),
+         Divider(height: 1,),),
+         Expanded(
+           child: GridView.count(
+             primary: false,
+             padding: const EdgeInsets.all(0),
+             crossAxisSpacing: 1,
+             mainAxisSpacing: 1,
+             crossAxisCount: 3,
+             children: myPhotos.map((photo) => ImageTile(photo)).toList()
+           ),
+         )
+      
+      
+      ],
+      ),
 
     bottomNavigationBar: BottomNavigationBar(
       selectedItemColor: Colors.black87,

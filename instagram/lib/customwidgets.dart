@@ -275,3 +275,9 @@ class DmBox extends StatelessWidget {
   }
 }
 
+Container ImageTile(String imageLink) {
+    return Container(
+              padding: const EdgeInsets.all(0),
+              child: Image(image: NetworkImage(imageLink),),
+            );
+  }
