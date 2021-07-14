@@ -281,3 +281,36 @@ Container ImageTile(String imageLink) {
               child: Image(image: NetworkImage(imageLink),),
             );
   }
+
+  Container CategoryButton(String category) {
+    return Container(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+        child: Container(
+                   height: 37,
+                     child: TextButton(
+                              child: Text(category),
+                              onPressed: (){},
+                              // autofocus: false,
+                              style: TextButton.styleFrom(
+                                textStyle: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0,
+                                  color: Colors.white,
+                                  ),    
+                                primary: Colors.black,
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(7),
+                                  side: BorderSide(
+                                    color: Colors.grey.shade400,
+                                    width: 1,),
+                                  ),
+                                
+                                ),
+                            ),
+                   ),
+      ),
+    );
+  }
