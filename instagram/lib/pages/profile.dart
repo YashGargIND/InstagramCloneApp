@@ -11,6 +11,8 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+    int _currentindex = 4;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -258,6 +260,39 @@ class _ProfileState extends State<Profile> {
          Container(child: 
          Divider(height: 1,),)
       ],),
+
+    bottomNavigationBar: BottomNavigationBar(
+      selectedItemColor: Colors.black87,
+      unselectedItemColor: Colors.black,
+      currentIndex: _currentindex,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.white,
+      selectedFontSize: 0,
+      iconSize: 30,
+      onTap: (index){
+        setState(() {
+          _currentindex = index;
+        });
+      },
+      items: [
+        BottomNavigationBarItem(
+          icon:  Icon((_currentindex==0) ? Icons.home: Icons.home_outlined,),
+          label: 'home',),
+        BottomNavigationBarItem(
+          icon:  Icon(Icons.search_outlined, size: (_currentindex==1) ? 33 : 30 ),
+          label: 'search'),
+        BottomNavigationBarItem(
+          icon:  Icon((_currentindex==2) ? Icons.add_box :Icons.add_box_outlined ,),
+          label: 'add'),
+        BottomNavigationBarItem(
+          icon:  Icon((_currentindex==3) ? Icons.favorite : Icons.favorite_border_outlined,),
+          label: 'home'),
+        BottomNavigationBarItem(
+          icon: (_currentindex==4) ? DpBubble(userdata[0], 18) : DpBubble(userdata[0], 15),
+          label: 'home')
+
+      ],),
+    
     );
   }
 }

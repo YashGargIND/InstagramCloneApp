@@ -85,7 +85,18 @@ class _DMState extends State<DM> {
       
       
     ),
-    bottomNavigationBar: BottomNavigationBar(
+    bottomNavigationBar: NavigationBar());
+  }
+}
+
+class NavigationBar extends StatelessWidget {
+  const NavigationBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
       selectedItemColor: Colors.black87,
       unselectedItemColor: Colors.black,
       type: BottomNavigationBarType.fixed,
@@ -120,7 +131,7 @@ class _DMState extends State<DM> {
           icon:  Icon(Icons.favorite),
           label: 'home'),
         
-      ],));
+      ],);
   }
 }
 
